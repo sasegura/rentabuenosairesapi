@@ -5,3 +5,4 @@ export * from './piso.repository';
 export * from './reservacion.repository';
 export * from './tips.repository';
 export * from './usuario.repository';
+export * from './imagen.repository';

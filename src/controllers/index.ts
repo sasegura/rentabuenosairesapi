@@ -6,3 +6,4 @@ export * from './fecha.controller';
 export * from './reservacion.controller';
 export * from './tips.controller';
 export * from './usuario.controller';
+export * from './imagen.controller';

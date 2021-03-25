@@ -1,3 +1,4 @@
+import {RestBindings} from '@loopback/rest';
 import {ApplicationConfig, RentabuenosairesapiApplication} from './application';
 
 export * from './application';
@@ -6,7 +7,7 @@ export async function main(options: ApplicationConfig = {}) {
   const app = new RentabuenosairesapiApplication(options);
   await app.boot();
   await app.start();
-
+  app.bind(RestBindings.REQUEST_BODY_PARSER_OPTIONS).to({limit: '50mb'}) // line added
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);
   console.log(`Try ${url}/ping`);
