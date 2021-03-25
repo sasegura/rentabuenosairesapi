@@ -27,6 +27,14 @@ export class Imagen extends Entity {
   })
   imagen?: string;
 
+  @property({
+    type: 'boolean',
+    required: true,
+    scale: 0,
+    postgresql: {columnName: 'portada', dataType: 'boolean', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+  })
+  portada: boolean;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
