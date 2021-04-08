@@ -8,8 +8,8 @@ const config = {
   host: 'localhost',
   port: 5432,
   user: 'postgres',
-  password: 'postgres',
-  database: 'rentaBuenosAires'
+  password: 'root',
+  database: 'rentabuenosaires'
 };
 
 // Observe application's life cycle to disconnect the datasource when
