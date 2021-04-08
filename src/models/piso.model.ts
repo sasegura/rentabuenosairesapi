@@ -84,6 +84,13 @@ export class Piso extends Entity {
   })
   idcoordenadas?: number;
 
+  @property({
+    type: 'number',
+    precision: 53,
+    postgresql: {columnName: 'precio', dataType: 'float', dataLength: null, dataPrecision: 53, dataScale: null, nullable: 'YES'},
+  })
+  precio?: number;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
