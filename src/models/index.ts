@@ -7,3 +7,4 @@ export * from './tips.model';
 export * from './reservacion.model';
 export * from './imagen.model';
 export * from './piso.model';
+export * from './usuario.model';

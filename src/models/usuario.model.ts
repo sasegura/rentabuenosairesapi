@@ -37,6 +37,13 @@ export class Usuario extends Entity {
   })
   contrasenna?: string;
 
+  @property({
+    type: 'string',
+    required: true,
+    postgresql: {columnName: 'Expiracion', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+  })
+  expiracion: string;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
