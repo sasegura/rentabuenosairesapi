@@ -9,7 +9,8 @@ const config = {
   port: process.env.dbport,
   user: process.env.dbusername,
   password: process.env.dbpassword,
-  database: process.env.database
+  database: process.env.database,
+  ssl: process.env.sslmode
 };
 
 // Observe application's life cycle to disconnect the datasource when
