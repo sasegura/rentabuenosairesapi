@@ -40,7 +40,7 @@ export class Usuario extends Entity {
   @property({
     type: 'string',
     required: true,
-    postgresql: {columnName: 'Expiracion', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'expiracion', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
   expiracion: string;
 

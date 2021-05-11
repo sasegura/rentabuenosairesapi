@@ -4,18 +4,22 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
+  del, get,
+  getModelSchemaRef, param,
+
+
+  patch, post,
+
+
+
+
   put,
-  del,
+
   requestBody,
-  response,
+  response
 } from '@loopback/rest';
 import {Piso} from '../models';
 import {PisoRepository} from '../repositories';
@@ -23,8 +27,8 @@ import {PisoRepository} from '../repositories';
 export class PisoController {
   constructor(
     @repository(PisoRepository)
-    public pisoRepository : PisoRepository,
-  ) {}
+    public pisoRepository: PisoRepository,
+  ) { }
 
   @post('/pisos')
   @response(200, {
@@ -37,7 +41,7 @@ export class PisoController {
         'application/json': {
           schema: getModelSchemaRef(Piso, {
             title: 'NewPiso',
-            
+            exclude: ['idpiso'],
           }),
         },
       },

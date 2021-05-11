@@ -4,18 +4,22 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
+  del, get,
+  getModelSchemaRef, param,
+
+
+  patch, post,
+
+
+
+
   put,
-  del,
+
   requestBody,
-  response,
+  response
 } from '@loopback/rest';
 import {Destino} from '../models';
 import {DestinoRepository} from '../repositories';
@@ -23,8 +27,8 @@ import {DestinoRepository} from '../repositories';
 export class DestinoController {
   constructor(
     @repository(DestinoRepository)
-    public destinoRepository : DestinoRepository,
-  ) {}
+    public destinoRepository: DestinoRepository,
+  ) { }
 
   @post('/destinos')
   @response(200, {
@@ -37,7 +41,7 @@ export class DestinoController {
         'application/json': {
           schema: getModelSchemaRef(Destino, {
             title: 'NewDestino',
-            exclude: ['id'],
+            exclude: ['iddestino'],
           }),
         },
       },
