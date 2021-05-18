@@ -44,6 +44,13 @@ export class Usuario extends Entity {
   })
   expiracion: string;
 
+  @property({
+    type: 'number',
+    required: true,
+    postgresql: {columnName: 'rol', dataType: 'integer', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+  })
+  rol: number;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data

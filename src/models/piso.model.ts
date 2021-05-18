@@ -219,71 +219,61 @@ export class Piso extends Entity {
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'serviciosAdicionales', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'serviciosAdicionales', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   serviciosAdicionales: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'estacionamientoInstalaciones', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'estacionamientoInstalaciones', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   estacionamientoInstalaciones: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'cocinaComedor', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'cocinaComedor', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   cocinaComedor: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'internetOficina', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'internetOficina', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   internetOficina: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'seguridadHogar', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'seguridadHogar', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   seguridadHogar: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'calefaccionRefrigeracion', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'calefaccionRefrigeracion', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   calefaccionRefrigeracion: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'entretenimiento', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'entretenimiento', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   entretenimiento: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'paraFamilias', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'paraFamilias', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   paraFamilias: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'dormitorio', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'dormitorio', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   dormitorio: string;
 
   @property({
     type: 'string',
-    required: true,
-    postgresql: {columnName: 'banno', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    postgresql: {columnName: 'banno', dataType: 'text', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
   })
   banno: string;
 
