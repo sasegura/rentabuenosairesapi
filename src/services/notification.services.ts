@@ -12,7 +12,7 @@ export class MailerService {
       port: 465,
       secure: true, // use TLS
       auth: {
-        user: "ighilarion@gmail.com",
+        user: "ighilarion.1990@gmail.com",
         pass: "ujfkbxvtfomthllu"
       }
     });
