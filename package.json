@@ -56,8 +56,10 @@
     "@loopback/rest": "^9.2.1",
     "@loopback/rest-explorer": "^3.2.1",
     "@loopback/service-proxy": "^3.1.1",
+    "@types/nodemailer": "^6.4.1",
     "dotenv": "^9.0.1",
     "loopback-connector-postgresql": "^5.3.0",
+    "nodemailer": "^6.6.0",
     "tsc-watch": "^4.2.9",
     "tslib": "^2.0.0"
   },
