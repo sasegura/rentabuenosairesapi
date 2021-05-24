@@ -107,12 +107,12 @@ export class emailController {
          password: encryptPass,
          rol: 0
        }
- 
+
        let newUser = await this.UsuariosRepository.create(paramUser)
        let tk = await this.authService.GenerateToken(newUser);
- 
+
        if (newUser) {
- 
+
          let parametros = ({
            from: '"Job InterView Me" <no-reply@jobiterviewme.com>', // sender address
            to: inscription.correo, // list of receivers
@@ -120,7 +120,7 @@ export class emailController {
            text: "", // plain text body
            html: `<b>Para culminar su inscripción entre a este link: </b> + <link>${" " + inscription.link + tk}</link>`, // html body
          })
- 
+
          let mail = await new MailerService().sendMail(parametros);
          if (mail) {
            return true
@@ -146,7 +146,7 @@ export class emailController {
   ): Promise<boolean> {
 
     let parametros1 = ({
-      from: '"Job InterView Me" <no-reply@jobiterviewme.com>', // sender address
+      from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
       to: mail.correoAdmin, // list of receivers
       subject: "Nueva preReserva", // Subject line
       text: "", // plain text body
@@ -179,7 +179,7 @@ export class emailController {
   ): Promise<boolean> {
 
     let parametros1 = ({
-      from: '"Job InterView Me" <no-reply@jobiterviewme.com>', // sender address
+      from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
       to: mail.correoCliente, // list of receivers
       subject: "Nueva cita", // Subject line
       text: "", // plain text body
