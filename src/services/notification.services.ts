@@ -8,12 +8,12 @@ export class MailerService {
 
   async sendMail(mailOptions: Mail.Options): Promise<SentMessageInfo> {
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
+      host: "smtp.servidor-correo.com",
+      port: 587,
       secure: true, // use TLS
       auth: {
-        user: "ighilarion.1990@gmail.com",
-        pass: "ujfkbxvtfomthllu"
+        user: "administrador@e-homeselect.com",
+        pass: "Jonaberm1983"
       }
     });
     return await transporter.sendMail(mailOptions);
