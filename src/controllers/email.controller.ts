@@ -181,23 +181,23 @@ export class emailController {
   @post('/sendMailMensaje', {
     responses: {
       '200': {
-        description: 'enviar mail a administrador'
+        description: 'enviar mensaje al administrador'
       }
     }
   })
   async SendMailMensaje(
-    @requestBody() mail: Mail2
+    @requestBody() mail2: Mail2
   ): Promise<boolean> {
 
     let parametros1 = ({
       from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
-      to: mail.correoAdmin, // list of receivers
+      to: mail2.correoAdmin, // list of receivers
       subject: "Nuevo mensaje", // Subject line
       text: "", // plain text body
       html: `<b>Hola administrador,</b>
-          <p> <b>Cliente:</b> ` + mail.clienteNombre + ` ha enviado un mensaje el día ` + mail.fechaInicio + `</p>
-          <p>Puede ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + ` ó teléfono: ` + mail.telefono + `.</p>
-          <p> <b> Mensaje: </b><p>` + mail.mensaje + `</p>
+          <p> <b>Cliente:</b> ` + mail2.clienteNombre + ` ha enviado un mensaje el día ` + mail2.fechaInicio + `</p>
+          <p>Puede ponerse en contacto con su cliente por el correo: ` + mail2.correoCliente + ` ó teléfono: ` + mail2.telefono + `.</p>
+          <p> <b> Mensaje: </b><p>` + mail2.mensaje + `</p>
           <p>Un saludo: 'Equipo de informática'</p>`, // html body
     })
 
