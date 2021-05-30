@@ -38,10 +38,22 @@ class Mail {
   fechaFin: string;
   cantidadPersonas: number
   precio: number
+  telefono: number
   clienteNombre: string
   pisoNombre: string
   destino: string
 }
+
+class Mail2 {
+  correoCliente: string
+  correoAdmin: string
+  fechaInicio: string;
+  clienteNombre: string
+  telefono: string
+  mensaje: string
+}
+
+
 
 export class emailController {
 
@@ -153,6 +165,38 @@ export class emailController {
       html: `<b>Hola administrador,</b><p>` + mail.clienteNombre + ` ha pre-reservado el piso ` + mail.pisoNombre + ` del destino ` + mail.destino +
         ` desde el día ` + mail.fechaInicio + ` hasta el día ` + mail.fechaFin + `</p>
           <p>Para confirmar la pre-reserva acceda al sitio https://e-homeselect.com o ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + `.</p>
+          <p>Un saludo</p>`, // html body
+    })
+
+    let mail1 = await new MailerService().sendMail(parametros1);
+
+    if (mail1) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  @post('/sendMailMensaje', {
+    responses: {
+      '200': {
+        description: 'enviar mail a administrador'
+      }
+    }
+  })
+  async SendMailMensaje(
+    @requestBody() mail: Mail2
+  ): Promise<boolean> {
+
+    let parametros1 = ({
+      from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
+      to: mail.correoAdmin, // list of receivers
+      subject: "Nuevo mensaje", // Subject line
+      text: "", // plain text body
+      html: `<b>Hola administrador,</b><p>` + mail.clienteNombre + ` ha enviado un mensaje el día ` + mail.fechaInicio + `</p>
+          <p>Puede ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + `.</p> ó teléfono: ` + mail.telefono + `
+          <p> Mensaje: <p>` + mail.mensaje + `</p>
           <p>Un saludo</p>`, // html body
     })
 
