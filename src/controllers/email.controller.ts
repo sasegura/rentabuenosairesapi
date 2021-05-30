@@ -194,10 +194,11 @@ export class emailController {
       to: mail.correoAdmin, // list of receivers
       subject: "Nuevo mensaje", // Subject line
       text: "", // plain text body
-      html: `<b>Hola administrador,</b><p>` + mail.clienteNombre + ` ha enviado un mensaje el día ` + mail.fechaInicio + `</p>
-          <p>Puede ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + `.</p> ó teléfono: ` + mail.telefono + `
-          <p> Mensaje: <p>` + mail.mensaje + `</p>
-          <p>Un saludo</p>`, // html body
+      html: `<b>Hola administrador,</b>
+          <p> <b>Cliente:</b> ` + mail.clienteNombre + ` ha enviado un mensaje el día ` + mail.fechaInicio + `</p>
+          <p>Puede ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + ` ó teléfono: ` + mail.telefono + `.</p>
+          <p> <b> Mensaje: </b><p>` + mail.mensaje + `</p>
+          <p>Un saludo: 'Equipo de informática'</p>`, // html body
     })
 
     let mail1 = await new MailerService().sendMail(parametros1);
