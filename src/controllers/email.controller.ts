@@ -204,6 +204,7 @@ export class emailController {
     let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
+      console.log(parametros1)
       return true
     }
     else {
