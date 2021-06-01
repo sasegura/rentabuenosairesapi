@@ -164,7 +164,7 @@ export class emailController {
       subject: "Nueva preReserva", // Subject line
       text: "", // plain text body
       html: `<b>Hola administrador,</b><p>` + mail.clienteNombre + ` ha pre-reservado el piso ` + mail.pisoNombre + ` del destino ` + mail.destino +
-        ` desde el día ` + mail.fechaInicio + ` hasta el día ` + mail.fechaFin + `</p> para ` + mail.cantidadPersonas + ` personas.
+        ` desde el día ` + mail.fechaInicio + ` hasta el día ` + mail.fechaFin + ` para ` + mail.cantidadPersonas + ` personas.</p>
           <p>Para confirmar la pre-reserva acceda al sitio https://e-homeselect.com </p>
           <p>Para ponerse en contacto con su cliente por el correo: ` + mail.correoCliente + ` o por el teléfono` + mail.telefono + ` .</p>
           <p>Comentarios del cliente:</p>
