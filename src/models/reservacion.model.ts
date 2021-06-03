@@ -1,7 +1,10 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model({
-  settings: {idInjection: false, postgresql: {schema: 'public', table: 'reservacion'}}
+  settings: {
+    idInjection: false,
+    postgresql: {schema: 'public', table: 'reservacion'},
+  },
 })
 export class Reservacion extends Entity {
   @property({
@@ -9,7 +12,14 @@ export class Reservacion extends Entity {
     required: true,
     scale: 0,
     id: 1,
-    postgresql: {columnName: 'idusuario', dataType: 'integer', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+    postgresql: {
+      columnName: 'idusuario',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   idusuario: number;
 
@@ -18,18 +28,42 @@ export class Reservacion extends Entity {
     required: true,
     scale: 0,
     id: 2,
-    postgresql: {columnName: 'idpiso', dataType: 'integer', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+    postgresql: {
+      columnName: 'idpiso',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   idpiso: number;
 
   @property({
-    type: 'number',
-    required: true,
-    scale: 0,
-    id: 3,
-    postgresql: {columnName: 'idfecha', dataType: 'integer', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+    type: 'string',
+    postgresql: {
+      columnName: 'fechaInicio',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'NO',
+    },
   })
-  idfecha: number;
+  fechaInicio: string;
+
+  @property({
+    type: 'string',
+    postgresql: {
+      columnName: 'fechaFin',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'NO',
+    },
+  })
+  fechaFin: string;
 
   // Define well-known properties here
 
