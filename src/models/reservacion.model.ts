@@ -9,6 +9,22 @@ import {Entity, model, property} from '@loopback/repository';
 export class Reservacion extends Entity {
   @property({
     type: 'number',
+    required: false,
+    scale: 0,
+    id: 1,
+    postgresql: {
+      columnName: 'id',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
+  })
+  id: number;
+
+  @property({
+    type: 'number',
     required: true,
     scale: 0,
     id: 1,
