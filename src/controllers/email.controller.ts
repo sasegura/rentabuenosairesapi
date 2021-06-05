@@ -165,6 +165,46 @@ export class emailController {
     }
   }
 
+  @post('/sendMailCitaCancelada', {
+    responses: {
+      '200': {
+        description: 'enviar mail a cliente cancelando cita',
+      },
+    },
+  })
+  async SendMailCitaCancelada(@requestBody() mail: Mail): Promise<boolean> {
+    let parametros1 = {
+      from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
+      to: mail.correoCliente, // list of receivers
+      subject: 'Nueva cita', // Subject line
+      text: '', // plain text body
+      html:
+        `<b>Hola ` +
+        mail.clienteNombre +
+        `,</b><p>Se ha cancelado tu reservación en el piso ` +
+        mail.pisoNombre +
+        ` del destino ` +
+        mail.destino +
+        ` comenzando el día ` +
+        mail.fechaInicio +
+        ` hasta el día ` +
+        mail.fechaFin +
+        `</p>
+          <p>En caso que necesite puede ponerse en contacto con el administrador mediante el correo ` +
+        mail.correoAdmin +
+        `.</p>
+          <p>Un saludo</p>`, // html body
+    };
+
+    let mail1 = await new MailerService().sendMail(parametros1);
+
+    if (mail1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @post('/sendMail', {
     responses: {
       '200': {
