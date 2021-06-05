@@ -94,6 +94,18 @@ export class Reservacion extends Entity {
   })
   aceptada?: boolean;
 
+  @property({
+    type: 'number',
+    postgresql: {
+      columnName: 'cantPersonas',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  cantPersonas?: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data
