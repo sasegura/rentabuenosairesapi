@@ -81,6 +81,19 @@ export class Reservacion extends Entity {
   })
   fechaFin: string;
 
+  @property({
+    type: 'boolean',
+    postgresql: {
+      columnName: 'aceptada',
+      dataType: 'boolean',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  aceptada?: boolean;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
