@@ -106,6 +106,19 @@ export class Reservacion extends Entity {
     },
   })
   cantPersonas?: number;
+
+  @property({
+    type: 'number',
+    postgresql: {
+      columnName: 'precio',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  precio?: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data
