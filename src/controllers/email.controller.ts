@@ -1,34 +1,5 @@
-// Uncomment these imports to begin using these cool features!
-
 import {post, requestBody} from '@loopback/rest';
-//import {UsuariosRepository} from '../repositories';
-//import {SmsNotification} from '../models';
-//import {EmailNotification} from '../models/email-notification.model';
-//import {StudentRepository, UserRepository} from '../repositories';
-//import {AuthService} from '../sevices/auth.service';
-//import {EncryptDecrypt} from '../sevices/encrypt-decrypt.service';
 import {MailerService} from '../services/notification.services';
-
-/*class Credentials {
-  username: string;
-  password: string;
-}
-
-class PasswordResetData {
-  username: string;
-}
-
-class Token {
-  token: string;
-}
-
-class IncripcionData {
-  nombre: string;
-  apellidos: string;
-  correo: string;
-  password: string;
-  link: string;
-}*/
 
 class Mail {
   correoCliente: string;
@@ -51,6 +22,14 @@ class Mail2 {
   clienteNombre: string;
   telefono: string;
   mensaje: string;
+}
+
+class Mail3 {
+  correoCliente: string;
+  correoAdmin: string;
+  subject: string;
+  mensajeText: string;
+  mensajeHtml: string;
 }
 
 export class emailController {
@@ -175,6 +154,31 @@ export class emailController {
           <p>El sistema de pago se realizará directamente en el establecimiento el día que comience su reservación.</p>
           <p>Si tienes cualquier problema para confirmar no dudes en contactarnos.</p>
           <p>Un saludo</p>`, // html body
+    };
+
+    let mail1 = await new MailerService().sendMail(parametros1);
+
+    if (mail1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @post('/sendMail', {
+    responses: {
+      '200': {
+        description: 'enviar mail a cliente confirmando cita',
+      },
+    },
+  })
+  async SendMail(@requestBody() mail: Mail3): Promise<boolean> {
+    let parametros1 = {
+      from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
+      to: mail.correoCliente, // list of receivers
+      subject: mail.subject, // Subject line
+      text: mail.mensajeText, // plain text body
+      html: mail.mensajeHtml, // html body
     };
 
     let mail1 = await new MailerService().sendMail(parametros1);
