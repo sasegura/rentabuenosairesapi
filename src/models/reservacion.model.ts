@@ -119,6 +119,7 @@ export class Reservacion extends Entity {
     },
   })
   precio?: number;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
