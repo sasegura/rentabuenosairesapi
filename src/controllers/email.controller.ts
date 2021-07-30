@@ -113,6 +113,7 @@ export class emailController {
           <p>Un saludo: 'Equipo de informática'</p>`, // html body
     };
 
+
     let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
@@ -134,29 +135,53 @@ export class emailController {
     let parametros1 = {
       from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
       to: mail.correoCliente, // list of receivers
-      subject: 'Nueva cita', // Subject line
+      subject: 'CONFIRMACION DE RESERVA-BOOKING CONFIRMATION', // Subject line
       text: '', // plain text body
       html:
         `<b>Hola ` +
         mail.clienteNombre +
-        `,</b><p>Se ha confirmado tu reservación en el piso ` +
+        `,</b><p>Se ha confirmado la reserva del departamento ` +
         mail.pisoNombre +
         ` del destino ` +
         mail.destino +
-        ` comenzando el día ` +
+        ` con ingreso el día ` +
         mail.fechaInicio +
-        ` hasta el día ` +
+        ` y salida el día ` +
         mail.fechaFin +
         `</p>
-          <p>En caso que necesite cancelar su reservación puede ponerse en contacto con el administrador mediante el correo ` +
+          <p>En caso de necesitar cancelar la reserva puedes ponerte en contacto con el administrador mediante el correo ` +
         mail.correoAdmin +
-        `.</p>
-          <p>El sistema de pago se realizará directamente en el establecimiento el día que comience su reservación.</p>
-          <p>Si tienes cualquier problema para confirmar no dudes en contactarnos.</p>
-          <p>Un saludo</p>`, // html body
+        `.</p+
+          <p>¡Gracias!</p>`+
+          `<br/><br/><br/><b>Hi ` +
+          mail.clienteNombre +
+          `,</b><p>The ` +
+          mail.pisoNombre +
+          ` apartment reservation has been confirmed at ` +
+          mail.destino +
+          ` destination, with check-in ` +
+          mail.fechaInicio +
+          ` and check-out on  ` +
+          mail.fechaFin +
+          `.</p>
+            <p>In case you need to cancel the reservation you can contact the administrator by email ` +
+          mail.correoAdmin +
+          `.</p>
+            <p>Thanks!</p>`, // html body
     };
 
-    let mail1 = await new MailerService().sendMail(parametros1);
+    /**Hola Jonathan Berman,
+    Se ha confirmado la reserva del departamento AAA en destino Buenos Aires, con ingreso el día 08/12/2021 y salida el día 10/12/2021.
+    En caso de necesitar cancelar la reserva puedes ponerte en contacto con el administrador mediante el correo administrador@e-homeselect.com.
+    Gracias!
+    */
+    /**Hi Jonathan Berman,
+    The AAA apartment reservation has been confirmed at Buenos Aires destination, with check-in 12/08/2021 and check-out on 12/10/2021.
+    In case you need to cancel the reservation you can contact the administrator by email administrador@e-homeselect.com.
+    Thanks!
+    */
+
+let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
       return true;
@@ -176,26 +201,48 @@ export class emailController {
     let parametros1 = {
       from: '"E-Home Select" <no-reply@e-homeselect.com>', // sender address
       to: mail.correoCliente, // list of receivers
-      subject: 'Nueva cita', // Subject line
+      subject: 'CANCELACION DE RESERVA-BOOKING CANCELLATION', // Subject line
       text: '', // plain text body
       html:
         `<b>Hola ` +
         mail.clienteNombre +
-        `,</b><p>Se ha cancelado tu reservación en el piso ` +
+        `,</b><p>Se ha cancelado la reserva del departamento ` +
         mail.pisoNombre +
-        ` del destino ` +
+        ` en destino ` +
         mail.destino +
-        ` comenzando el día ` +
+        `, con ingreso el día ` +
         mail.fechaInicio +
-        ` hasta el día ` +
+        ` y salida el día ` +
         mail.fechaFin +
-        `</p>
-          <p>En caso que necesite puede ponerse en contacto con el administrador mediante el correo ` +
+        `.</p>
+          <p>En caso de necesitarlo, puedes ponerte en contacto con el administrador mediante el correo ` +
         mail.correoAdmin +
         `.</p>
-          <p>Un saludo</p>`, // html body
+          <p>¡Gracias!</p>`+
+          `<br/><br/><br/><b>Hi ` +
+        mail.clienteNombre +
+        `,</b><p>The reservation of the ` +
+        mail.pisoNombre +
+        ` apartment in ` +
+        mail.destino +
+        `, destination has been canceled, with check-in on ` +
+        mail.fechaInicio +
+        ` and check-out ` +
+        mail.fechaFin +
+        `.</p>
+          <p>In case you need it, you can contact the administrator by email ` +
+        mail.correoAdmin +
+        `.</p>
+          <p>Thanks!</p>`, // html body
     };
-
+    /** Se ha cancelado la reserva del departamento AAA en destino Buenos Aires, con ingreso el día 08/12/2021 y salida el día 10/12/2021.
+    En caso de necesitarlo, puedes ponerte en contacto con el administrador mediante el correo administrador@e-homeselect.com.
+    Gracias!
+    */
+    /**The reservation of the AAA apartment in Buenos Aires destination has been canceled, with check-in on 12/08/2021 and check-out 12/10/2021.
+    In case you need it, you can contact the administrator by email administrator@e-homeselect.com.
+    Thanks!
+    */
     let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
