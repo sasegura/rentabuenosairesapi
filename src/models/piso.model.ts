@@ -186,6 +186,20 @@ export class Piso extends Entity {
 
   @property({
     type: 'string',
+    required: true,
+    postgresql: {
+      columnName: 'nombreI',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'NO',
+    },
+  })
+  nombreI: string;
+
+  @property({
+    type: 'string',
     postgresql: {
       columnName: 'moneda',
       dataType: 'text',
