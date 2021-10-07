@@ -11,6 +11,7 @@ class Mail {
   telefono: number;
   clienteNombre: string;
   pisoNombre: string;
+  pisoNombreI: string;
   destino: string;
   texto: string;
 }
@@ -113,7 +114,6 @@ export class emailController {
           <p>Un saludo: 'Equipo de informática'</p>`, // html body
     };
 
-
     let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
@@ -152,21 +152,21 @@ export class emailController {
           <p>En caso de necesitar cancelar la reserva puedes ponerte en contacto con el administrador mediante el correo ` +
         mail.correoAdmin +
         `.</p+
-          <p>¡Gracias!</p>`+
-          `<br/><br/><br/><b>Hi ` +
-          mail.clienteNombre +
-          `,</b><p>The ` +
-          mail.pisoNombre +
-          ` apartment reservation has been confirmed at ` +
-          mail.destino +
-          ` destination, with check-in ` +
-          mail.fechaInicio +
-          ` and check-out on  ` +
-          mail.fechaFin +
-          `.</p>
+          <p>¡Gracias!</p>` +
+        `<br/><br/><br/><b>Hi ` +
+        mail.clienteNombre +
+        `,</b><p>The ` +
+        mail.pisoNombreI +
+        ` apartment reservation has been confirmed at ` +
+        mail.destino +
+        ` destination, with check-in ` +
+        mail.fechaInicio +
+        ` and check-out on  ` +
+        mail.fechaFin +
+        `.</p>
             <p>In case you need to cancel the reservation you can contact the administrator by email ` +
-          mail.correoAdmin +
-          `.</p>
+        mail.correoAdmin +
+        `.</p>
             <p>Thanks!</p>`, // html body
     };
 
@@ -181,7 +181,7 @@ export class emailController {
     Thanks!
     */
 
-let mail1 = await new MailerService().sendMail(parametros1);
+    let mail1 = await new MailerService().sendMail(parametros1);
 
     if (mail1) {
       return true;
@@ -218,11 +218,11 @@ let mail1 = await new MailerService().sendMail(parametros1);
           <p>En caso de necesitarlo, puedes ponerte en contacto con el administrador mediante el correo ` +
         mail.correoAdmin +
         `.</p>
-          <p>¡Gracias!</p>`+
-          `<br/><br/><br/><b>Hi ` +
+          <p>¡Gracias!</p>` +
+        `<br/><br/><br/><b>Hi ` +
         mail.clienteNombre +
         `,</b><p>The reservation of the ` +
-        mail.pisoNombre +
+        mail.pisoNombreI +
         ` apartment in ` +
         mail.destino +
         `, destination has been canceled, with check-in on ` +
