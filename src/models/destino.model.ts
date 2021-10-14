@@ -1,7 +1,10 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model({
-  settings: {idInjection: false, postgresql: {schema: 'public', table: 'destino'}}
+  settings: {
+    idInjection: false,
+    postgresql: {schema: 'public', table: 'destino'},
+  },
 })
 export class Destino extends Entity {
   @property({
@@ -9,15 +12,42 @@ export class Destino extends Entity {
     required: false,
     scale: 0,
     id: 1,
-    postgresql: {columnName: 'iddestino', dataType: 'integer', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+    postgresql: {
+      columnName: 'iddestino',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   iddestino: number;
 
   @property({
     type: 'string',
-    postgresql: {columnName: 'nombre', dataType: '"char"', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'YES'},
+    postgresql: {
+      columnName: 'nombre',
+      dataType: '"char"',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
   })
   nombre?: string;
+
+  @property({
+    type: 'string',
+    postgresql: {
+      columnName: 'nombreI',
+      dataType: '"char"',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  nombreI?: string;
 
   // Define well-known properties here
 
