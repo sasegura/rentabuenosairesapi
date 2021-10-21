@@ -7,13 +7,13 @@ import {
   Where,
 } from '@loopback/repository';
 import {
-  post,
-  param,
+  del,
   get,
   getModelSchemaRef,
+  param,
   patch,
+  post,
   put,
-  del,
   requestBody,
   response,
 } from '@loopback/rest';
@@ -23,7 +23,7 @@ import {TipsRepository} from '../repositories';
 export class TipsController {
   constructor(
     @repository(TipsRepository)
-    public tipsRepository : TipsRepository,
+    public tipsRepository: TipsRepository,
   ) {}
 
   @post('/tips')
@@ -42,7 +42,7 @@ export class TipsController {
         },
       },
     })
-    tips: Omit<Tips, 'idtips'>,
+    tips: Omit<Tips, 'id'>,
   ): Promise<Tips> {
     return this.tipsRepository.create(tips);
   }
@@ -52,9 +52,7 @@ export class TipsController {
     description: 'Tips model count',
     content: {'application/json': {schema: CountSchema}},
   })
-  async count(
-    @param.where(Tips) where?: Where<Tips>,
-  ): Promise<Count> {
+  async count(@param.where(Tips) where?: Where<Tips>): Promise<Count> {
     return this.tipsRepository.count(where);
   }
 
@@ -70,9 +68,7 @@ export class TipsController {
       },
     },
   })
-  async find(
-    @param.filter(Tips) filter?: Filter<Tips>,
-  ): Promise<Tips[]> {
+  async find(@param.filter(Tips) filter?: Filter<Tips>): Promise<Tips[]> {
     return this.tipsRepository.find(filter);
   }
 
@@ -106,7 +102,7 @@ export class TipsController {
   })
   async findById(
     @param.path.number('id') id: number,
-    @param.filter(Tips, {exclude: 'where'}) filter?: FilterExcludingWhere<Tips>
+    @param.filter(Tips, {exclude: 'where'}) filter?: FilterExcludingWhere<Tips>,
   ): Promise<Tips> {
     return this.tipsRepository.findById(id, filter);
   }
