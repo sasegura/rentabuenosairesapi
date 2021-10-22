@@ -277,6 +277,32 @@ export class Piso extends Entity {
   diasReservados: string;
 
   @property({
+    type: 'string',
+    postgresql: {
+      columnName: 'diasReservadosEntrada',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  diasReservadosEntrada: string;
+
+  @property({
+    type: 'string',
+    postgresql: {
+      columnName: 'diasReservadosSalida',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  diasReservadosSalida: string;
+
+  @property({
     type: 'boolean',
     postgresql: {
       columnName: 'tendederoRopa',
