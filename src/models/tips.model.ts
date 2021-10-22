@@ -35,6 +35,20 @@ export class Tips extends Entity {
   nombre: string;
 
   @property({
+    type: 'string',
+    required: true,
+    postgresql: {
+      columnName: 'nombreI',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'NO',
+    },
+  })
+  nombreI: string;
+
+  @property({
     type: 'number',
     required: true,
     scale: 0,
@@ -61,6 +75,19 @@ export class Tips extends Entity {
     },
   })
   descripcion?: string;
+
+  @property({
+    type: 'string',
+    postgresql: {
+      columnName: 'descripcionI',
+      dataType: 'text',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  descripcionI?: string;
 
   @property({
     type: 'string',
