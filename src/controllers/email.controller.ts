@@ -14,6 +14,7 @@ class Mail {
   pisoNombreI: string;
   destino: string;
   texto: string;
+  password: string;
 }
 
 class Mail2 {
@@ -149,9 +150,15 @@ export class emailController {
         ` y salida el día ` +
         mail.fechaFin +
         `</p>
+        <p>Puede hacer login utilizando ` +
+        mail.clienteNombre +
+        ` como usuario y ` +
+        mail.password +
+        ` como contraseña` +
+        `</p>
           <p>En caso de necesitar cancelar la reserva puedes ponerte en contacto con el administrador mediante el correo ` +
         mail.correoAdmin +
-        `.</p+
+        `.</p>
           <p>¡Gracias!</p>` +
         `<br/><br/><br/><b>Hi ` +
         mail.clienteNombre +
@@ -164,6 +171,12 @@ export class emailController {
         ` and check-out on  ` +
         mail.fechaFin +
         `.</p>
+        <p>You can login using your ` +
+        mail.clienteNombre +
+        ` as username and ` +
+        mail.correoAdmin +
+        ` as password
+        </p>
             <p>In case you need to cancel the reservation you can contact the administrator by email ` +
         mail.correoAdmin +
         `.</p>
