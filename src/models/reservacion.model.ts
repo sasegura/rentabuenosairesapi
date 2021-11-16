@@ -95,6 +95,19 @@ export class Reservacion extends Entity {
   aceptada?: boolean;
 
   @property({
+    type: 'boolean',
+    postgresql: {
+      columnName: 'cancelada',
+      dataType: 'boolean',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  cancelada?: boolean;
+
+  @property({
     type: 'number',
     postgresql: {
       columnName: 'cantPersonas',
