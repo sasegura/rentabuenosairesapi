@@ -144,7 +144,7 @@ export class Piso extends Entity {
   @property({
     type: 'boolean',
     postgresql: {
-      columnName: 'Barbecue',
+      columnName: 'barbecue',
       dataType: 'boolean',
       dataLength: null,
       dataPrecision: null,
@@ -152,7 +152,7 @@ export class Piso extends Entity {
       nullable: 'YES',
     },
   })
-  Barbecue?: boolean;
+  barbecue?: boolean;
   
   @property({
     type: 'number',
