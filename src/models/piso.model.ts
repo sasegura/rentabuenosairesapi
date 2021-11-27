@@ -153,7 +153,7 @@ export class Piso extends Entity {
     },
   })
   barbecue?: boolean;
-  
+
   @property({
     type: 'number',
     scale: 0,
@@ -483,32 +483,6 @@ export class Piso extends Entity {
     },
   })
   jacuzzi?: boolean;
-
-  @property({
-    type: 'boolean',
-    postgresql: {
-      columnName: 'pool',
-      dataType: 'boolean',
-      dataLength: null,
-      dataPrecision: null,
-      dataScale: null,
-      nullable: 'YES',
-    },
-  })
-  pool?: boolean;
-
-  @property({
-    type: 'boolean',
-    postgresql: {
-      columnName: 'Barbecue',
-      dataType: 'boolean',
-      dataLength: null,
-      dataPrecision: null,
-      dataScale: null,
-      nullable: 'YES',
-    },
-  })
-  Barbecue?: boolean;
 
   @property({
     type: 'boolean',
