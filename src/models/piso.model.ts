@@ -129,6 +129,32 @@ export class Piso extends Entity {
   calefaccion?: boolean;
 
   @property({
+    type: 'boolean',
+    postgresql: {
+      columnName: 'pool',
+      dataType: 'boolean',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  pool?: boolean;
+
+  @property({
+    type: 'boolean',
+    postgresql: {
+      columnName: 'Barbecue',
+      dataType: 'boolean',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: null,
+      nullable: 'YES',
+    },
+  })
+  Barbecue?: boolean;
+  
+  @property({
     type: 'number',
     scale: 0,
     postgresql: {
